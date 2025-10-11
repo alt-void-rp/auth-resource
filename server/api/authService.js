@@ -1,5 +1,5 @@
-import axios from 'axios';
-import { API_URL } from '../../shared/constants.js';
+//import axios from 'axios';
+//import { API_URL } from '../../shared/constants.js';
 
 /**
  * Выполняет вход через внешний API
@@ -39,3 +39,5 @@ export async function verifyOtp(email, otp_code) {
   // Пример: return await axios.post(`${API_URL}/verify-otp`, { email, otp_code });
   return { success: true };
 }
+
+

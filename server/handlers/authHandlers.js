@@ -1,4 +1,3 @@
-import * as alt from 'alt-server';
 import { EVENTS } from '../../shared/constants.js';
 import { emitSuccess, emitError } from '../responces/emit.js';
 import {

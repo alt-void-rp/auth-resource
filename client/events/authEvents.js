@@ -23,12 +23,16 @@ export function setView(view) {
 export function onLoginSuccess(data) {
   if (!data.success) return;
 
+  /*
   const player = alt.Player.local;
   alt.toggleGameControls(true);
   alt.showCursor(false);
   currentView?.unfocus();
   currentView?.destroy();
   native.freezeEntityPosition(player.scriptID, false);
+  */
+  currentView?.emit(EVENTS.SERVER.LOGIN_SUCCESS, data);
+
 }
 
 /**
@@ -55,4 +59,12 @@ export function onOtpSuccess(data) {
 
 export function onOtpFail(data) {
   currentView?.emit(EVENTS.SERVER.OTP_SUCCESS, data);
+}
+
+export function onUsersGetSuccess(data) {
+  currentView?.emit(EVENTS.SERVER.GET_USERS_ME_SUCCESS, data);
+}
+
+export function onUsersGetFail(data) {
+  currentView?.emit(EVENTS.SERVER.GET_USERS_ME_FAIL, data);
 }

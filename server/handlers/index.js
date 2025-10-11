@@ -3,8 +3,12 @@ import { EVENTS } from '../../shared/constants.js';
 import {
   handleLogin,
   handleResetPassword,
-  handleOtpValidate
+  handleOtpValidate,
 } from './authHandlers.js';
+import {
+  handleUsersMe
+} from './profileHandlers.js'
+
 
 /**
  * Регистрирует обработчики событий
@@ -13,4 +17,6 @@ export function registerHandlers() {
   alt.onClient(EVENTS.CLIENT.LOGIN, handleLogin);
   alt.onClient(EVENTS.CLIENT.RESET_PASSWORD, handleResetPassword);
   alt.onClient(EVENTS.CLIENT.OTP_VALIDATE, handleOtpValidate);
+
+  alt.onClient(EVENTS.CLIENT.GET_USERS_ME, handleUsersMe);
 }

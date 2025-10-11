@@ -5,6 +5,8 @@ export const EVENTS = {
       LOGIN: 'auth:loginUser',
       RESET_PASSWORD: 'auth:resetPasswordUser',
       OTP_VALIDATE: 'auth:otpValidate',
+
+      GET_USERS_ME: 'users:getUsersMe',
     },
     SERVER: {
       LOGIN_SUCCESS: 'auth:successAuthUser',
@@ -13,8 +15,11 @@ export const EVENTS = {
       RESET_FAIL: 'auth:failResetPasswordUser',
       OTP_SUCCESS: 'auth:successOtpUser',
       OTP_FAIL: 'auth:novalidOtpUser',
+
+      GET_USERS_ME_SUCCESS: 'users:successGetUsersMe',
+      GET_USERS_ME_FAIL: 'users:failGetUsersMe',
     }
   };
   
-  export const API_URL = `${SHARED_VARIABLES.API_URL}/v1/auth/login`;
+  export const API_URL = `${SHARED_VARIABLES.API_URL}/v1`;
   export const FRONTEND_URL = `${SHARED_VARIABLES.FRONTEND_URL}`;

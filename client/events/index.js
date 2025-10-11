@@ -13,4 +13,7 @@ export function registerEvents(view) {
 
   alt.onServer(EVENTS.SERVER.OTP_SUCCESS, authEvents.onOtpSuccess);
   alt.onServer(EVENTS.SERVER.OTP_FAIL, authEvents.onOtpFail);
+
+  alt.onServer(EVENTS.SERVER.GET_USERS_ME_SUCCESS, authEvents.onUsersGetSuccess);
+  alt.onServer(EVENTS.SERVER.GET_USERS_ME_FAIL, authEvents.onUsersGetFail);
 }
