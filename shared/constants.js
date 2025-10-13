@@ -8,6 +8,7 @@ export const EVENTS = {
 
       GET_USERS_ME: 'users:getUsersMe',
       CONNECT_TO_GAME: 'users:connectToGame',
+      CREATE_PERSON: 'users:createPerson',
     },
     SERVER: {
       LOGIN_SUCCESS: 'auth:successAuthUser',
@@ -19,6 +20,8 @@ export const EVENTS = {
 
       GET_USERS_ME_SUCCESS: 'users:successGetUsersMe',
       GET_USERS_ME_FAIL: 'users:failGetUsersMe',
+
+      CREATE_PERSON_DIMENSION: 'users:createPersonDimesion',
     }
   };
   

@@ -6,7 +6,8 @@ import {
   handleOtpValidate,
 } from './authHandlers.js';
 import {
-  handleUsersMe
+  handleUsersMe,
+  handleCreatePerson
 } from './profileHandlers.js'
 
 
@@ -19,4 +20,5 @@ export function registerHandlers() {
   alt.onClient(EVENTS.CLIENT.OTP_VALIDATE, handleOtpValidate);
 
   alt.onClient(EVENTS.CLIENT.GET_USERS_ME, handleUsersMe);
+  alt.onClient(EVENTS.CLIENT.CREATE_PERSON, handleCreatePerson);
 }

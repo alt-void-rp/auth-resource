@@ -61,3 +61,11 @@ export function onUsersGetSuccess(data) {
 export function onUsersGetFail(data) {
   currentView?.emit(EVENTS.SERVER.GET_USERS_ME_FAIL, data);
 }
+
+export function onCreatePerson(data){
+  const user = SHARED.localUser;
+  user.loadDimension(data);
+
+  currentView.isVisible = false;
+  currentView.unfocus();
+}

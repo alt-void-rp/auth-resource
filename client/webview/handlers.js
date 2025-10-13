@@ -33,4 +33,8 @@ export function setupWebViewHandlers(view) {
     view.unfocus();
     view.destroy();
   });
+
+  view.on(EVENTS.CLIENT.CREATE_PERSON, () => {
+    alt.emitServer(EVENTS.CLIENT.CREATE_PERSON);
+  });
 }

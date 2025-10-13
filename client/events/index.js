@@ -16,4 +16,9 @@ export function registerEvents(view) {
 
   alt.onServer(EVENTS.SERVER.GET_USERS_ME_SUCCESS, authEvents.onUsersGetSuccess);
   alt.onServer(EVENTS.SERVER.GET_USERS_ME_FAIL, authEvents.onUsersGetFail);
+
+  alt.onServer(EVENTS.SERVER.GET_USERS_ME_FAIL, authEvents.onUsersGetFail);
+
+  alt.onServer(EVENTS.SERVER.CREATE_PERSON_DIMENSION, authEvents.onCreatePerson);
+
 }

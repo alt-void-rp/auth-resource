@@ -15,3 +15,12 @@ export async function handleUsersMe(player, jsonData) {
     }
 
 }
+
+export async function handleCreatePerson(player){
+    const dim = player.id; 
+    player.dimension = dim;
+
+    const pos = { x: -786.8663, y: 315.7642, z: 217.6385 };
+
+    emitSuccess(player, EVENTS.SERVER.CREATE_PERSON_DIMENSION, {"pos" : pos, "IPL" : "apa_v_mp_h_01_a"});
+}
