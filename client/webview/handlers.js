@@ -1,7 +1,6 @@
 import * as alt from 'alt-client';
 import { EVENTS } from '../../shared/constants.js';
-
-const access_token = { access_token : '12321h321kjhk21j3h' };
+import * as SHARED from 'alt:shared-variables';
 
 /**
  * Настраивает обработчики событий от WebView → сервер
@@ -21,6 +20,17 @@ export function setupWebViewHandlers(view) {
   });
 
   view.on(EVENTS.CLIENT.GET_USERS_ME, () => {
-    alt.emitServer(EVENTS.CLIENT.GET_USERS_ME, access_token);
+    const user = SHARED.localUser;
+    alt.emitServer(EVENTS.CLIENT.GET_USERS_ME, user.getAll());
+  });
+
+  view.on(EVENTS.CLIENT.CONNECT_TO_GAME, (data) => {
+    const user = SHARED.localUser;
+
+    user.update(data);
+    user.unblockControls();
+
+    view.unfocus();
+    view.destroy();
   });
 }

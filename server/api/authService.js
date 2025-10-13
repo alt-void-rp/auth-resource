@@ -18,7 +18,7 @@ export async function login(username, password) {
     const message = error.response?.data?.message || error.message || 'Неизвестная ошибка';
     return { success: false, error: { message } };
   }*/
-  return { success: true, data: { username, password } };
+  return { success: true, data: { access_token: "123jhkj321hkj213", refresh_token: "asdnsa435asbdhj324dsa" } };
 }
 /**
  * Запрашивает сброс пароля через внешний API

@@ -17,7 +17,14 @@ export async function getUsersMe(access_token){
             "exp": 3,
             "credit_money": 12300,
             "cash_money": 1350,
-            "hours_in_game": 322
+            "hours_in_game": 322,
+
+            "last_position" : {
+                "x" : -683,
+                "y" : 102,
+                "z" : 55
+            }
+
         }
     ];
   

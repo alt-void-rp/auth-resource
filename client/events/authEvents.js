@@ -1,6 +1,6 @@
 import * as alt from 'alt-client';
-import * as native from 'natives';
 import { EVENTS } from '../../shared/constants.js';
+import * as SHARED from 'alt:shared-variables';
 
 /**
  * Устанавливает текущий вид
@@ -22,17 +22,10 @@ export function setView(view) {
  */
 export function onLoginSuccess(data) {
   if (!data.success) return;
-
-  /*
-  const player = alt.Player.local;
-  alt.toggleGameControls(true);
-  alt.showCursor(false);
-  currentView?.unfocus();
-  currentView?.destroy();
-  native.freezeEntityPosition(player.scriptID, false);
-  */
+  const user = SHARED.localUser;
+  user.set("access_token", data.access_token);
+  user.set("refresh_token", data.refresh_token);
   currentView?.emit(EVENTS.SERVER.LOGIN_SUCCESS, data);
-
 }
 
 /**

@@ -1,19 +1,15 @@
 import * as alt from 'alt-client';
-import * as native from 'natives';
 import { FRONTEND_URL } from '../shared/constants.js';
 import { registerEvents } from './events/index.js';
 import { setupWebViewHandlers } from './webview/handlers.js';
+import * as SHARED from 'alt:shared-variables';
 
 const view = new alt.WebView(`${FRONTEND_URL}/auth`);
 
-// Блокируем игру
-alt.toggleGameControls(false);
-alt.showCursor(true);
-view.focus();
+const user = SHARED.localUser;
+user.blockControls();
 
-// Замораживаем игрока (опционально)
-const player = alt.Player.local;
-native.freezeEntityPosition(player.scriptID, true);
+view.focus();
 
 // Регистрируем обработчики
 setupWebViewHandlers(view);
