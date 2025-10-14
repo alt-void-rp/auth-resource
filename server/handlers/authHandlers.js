@@ -1,3 +1,5 @@
+// @ts-ignore
+import * as alt from 'alt-server';
 import { EVENTS } from '../../shared/constants.js';
 import { emitSuccess, emitError } from '../responces/emit.js';
 import {
@@ -11,7 +13,14 @@ import {
   verifyOtp
 } from '../api/authService.js';
 
+
 // --- LOGIN ---
+/**
+ * 
+ * @param {alt.Player} player 
+ * @param {object} jsonData 
+ * @returns 
+ */
 export async function handleLogin(player, jsonData) {
   let data = JSON.parse(JSON.parse(jsonData));
 
@@ -29,6 +38,12 @@ export async function handleLogin(player, jsonData) {
 }
 
 // --- RESET PASSWORD ---
+/**
+ * 
+ * @param {alt.Player} player 
+ * @param {object} jsonData 
+ * @returns 
+ */
 export async function handleResetPassword(player, jsonData) {
   let data = JSON.parse(JSON.parse(jsonData));
 
@@ -47,6 +62,12 @@ export async function handleResetPassword(player, jsonData) {
 }
 
 // --- OTP VALIDATE ---
+/**
+ * 
+ * @param {alt.Player} player 
+ * @param {object} jsonData 
+ * @returns 
+ */
 export async function handleOtpValidate(player, jsonData) {
   let data = JSON.parse(JSON.parse(jsonData));
 
@@ -60,6 +81,7 @@ export async function handleOtpValidate(player, jsonData) {
   if (result.success) {
     emitSuccess(player, EVENTS.SERVER.OTP_SUCCESS, {});
   } else {
+    // @ts-ignore
     emitError(player, EVENTS.SERVER.OTP_FAIL, 'api-error', result.error.message);
   }
 }

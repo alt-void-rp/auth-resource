@@ -1,3 +1,4 @@
+// @ts-ignore
 import * as alt from 'alt-server';
 import { EVENTS } from '../../shared/constants.js';
 import {

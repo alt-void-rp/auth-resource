@@ -2,6 +2,9 @@ import * as alt from 'alt-client';
 import { EVENTS } from '../../shared/constants.js';
 import * as authEvents from './authEvents.js';
 
+/**
+ * @param {alt.WebView} view
+*/
 export function registerEvents(view) {
   authEvents.setView(view);
 
@@ -20,5 +23,4 @@ export function registerEvents(view) {
   alt.onServer(EVENTS.SERVER.GET_USERS_ME_FAIL, authEvents.onUsersGetFail);
 
   alt.onServer(EVENTS.SERVER.CREATE_PERSON_DIMENSION, authEvents.onCreatePerson);
-
 }

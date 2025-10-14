@@ -7,6 +7,7 @@ import * as SHARED from 'alt:shared-variables';
  * @param {alt.WebView} view
  */
 export function setupWebViewHandlers(view) {
+
   view.on(EVENTS.CLIENT.LOGIN, (data) => {
     alt.emitServer(EVENTS.CLIENT.LOGIN, JSON.stringify(data));
   });

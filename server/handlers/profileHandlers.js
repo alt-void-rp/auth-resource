@@ -1,9 +1,18 @@
+// @ts-ignore
+import * as alt from 'alt-server';
+
 import { EVENTS } from '../../shared/constants.js';
 import { emitSuccess, emitError } from '../responces/emit.js';
 import {
   getUsersMe as apiUsersMe,
 } from '../api/profilesService.js';
 
+
+/**
+ * 
+ * @param {alt.Player} player 
+ * @param {object} jsonData 
+ */
 export async function handleUsersMe(player, jsonData) {
     let data = jsonData;
   
@@ -16,6 +25,10 @@ export async function handleUsersMe(player, jsonData) {
 
 }
 
+/**
+ * 
+ * @param {alt.Player} player 
+ */
 export async function handleCreatePerson(player){
     const dim = player.id; 
     player.dimension = dim;

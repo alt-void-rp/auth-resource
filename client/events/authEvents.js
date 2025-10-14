@@ -36,32 +36,51 @@ export function onLoginFail(data) {
   currentView?.emit(EVENTS.SERVER.LOGIN_FAIL, data);
 }
 
-// --- RESET PASSWORD ---
+/**
+ * @param {object} data
+ */
 export function onResetSuccess(data) {
   currentView?.emit(EVENTS.SERVER.RESET_SUCCESS, data);
 }
 
+/**
+ * @param {object} data
+ */
 export function onResetFail(data) {
   currentView?.emit(EVENTS.SERVER.RESET_FAIL, data);
 }
 
-// --- OTP ---
+/**
+ * @param {object} data
+ */
 export function onOtpSuccess(data) {
   currentView?.emit(EVENTS.SERVER.OTP_SUCCESS, data);
 }
 
+/**
+ * @param {object} data
+ */
 export function onOtpFail(data) {
   currentView?.emit(EVENTS.SERVER.OTP_SUCCESS, data);
 }
 
+/**
+ * @param {object} data
+*/
 export function onUsersGetSuccess(data) {
   currentView?.emit(EVENTS.SERVER.GET_USERS_ME_SUCCESS, data);
 }
 
+/**
+ * @param {object} data
+*/
 export function onUsersGetFail(data) {
   currentView?.emit(EVENTS.SERVER.GET_USERS_ME_FAIL, data);
 }
 
+/**
+ * @param {object} data
+*/
 export function onCreatePerson(data){
   const user = SHARED.localUser;
   user.loadDimension(data);
