@@ -83,7 +83,7 @@ export function onUsersGetFail(data) {
 */
 export function onCreatePerson(data){
   const user = SHARED.localUser;
-  user.loadDimension(data);
+  user.createPerson(data);
 
   currentView.isVisible = false;
   currentView.unfocus();
