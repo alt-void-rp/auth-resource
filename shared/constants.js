@@ -1,4 +1,4 @@
-import * as SHARED_VARIABLES from 'alt:shared-variables'
+import * as SHARED_VARIABLES from 'alt:backend-controls'
 
 export const EVENTS = {
     CLIENT: {
@@ -24,5 +24,6 @@ export const EVENTS = {
       CREATE_PERSON_DIMENSION: 'users:createPersonDimesion',
     }
   };
+  
   export const API_URL = `${SHARED_VARIABLES.API_URL}/v1`;
   export const FRONTEND_URL = `${SHARED_VARIABLES.FRONTEND_URL}`;
